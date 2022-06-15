@@ -1,0 +1,19 @@
+import * as React from 'react' 
+
+interface I{{pascalCase name}}Prop{
+    children:React.ReactNode  
+}
+
+const {{pascalCase name}}:React.FC<I{{pascalCase name}}Prop> = () => 
+{
+    return <div> Hello {{pascalCase name}} component </div>
+}
+
+interface I{{pascalCase name}}ServerProp{}
+
+async function getServerSideProps(context:I{{pascalCase name}}ServerProp)
+{ 
+    return { props: {}, }
+};
+
+export default {{pascalCase name}}
