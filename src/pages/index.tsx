@@ -1,6 +1,8 @@
+import * as React from 'react'
 import Head from 'next/head'
-import Block from 'components/Block'
-import Footer from 'components/Footer'
+
+import Footer from '@/components/Footer'
+import Block from '@/components/Block'
 
 export default function Home() {
   return (

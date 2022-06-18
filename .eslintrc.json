@@ -1,116 +1,14 @@
 {
-  "parser": "@babel/eslint-parser",
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true
-  },
-  "parserOptions": {
-    "babelOptions": {
-      "presets": ["@babel/preset-react"]
-    },
-    "ecmaVersion": 2018,
-    "sourceType": "module",
-    "requireConfigFile": false
-  },
   "extends": [
-    "next",
-    "next/core-web-vitals",
-    "prettier",
+    "rakeshshrestha",
+    "rakeshshrestha/react",
+    "rakeshshrestha/import",
     "plugin:storybook/recommended",
     "plugin:tailwindcss/recommended"
   ],
-  "ignorePatterns": ["*.config.js"],
   "rules": {
     "tailwindcss/classnames-order": "off",
-    "import/extensions": "off",
-    "import/newline-after-import": "off",
-    "import/no-named-as-default": "error",
-    "import/no-amd": "error",
-    "import/no-commonjs": "off",
-    "import/no-named-default": "error",
-    "import/no-namespace": "off",
-    "import/no-nodejs-modules": "off",
-    "import/order": [
-      "warn",
-      {
-        "pathGroups": [
-          {
-            "pattern": "@/**",
-            "group": "external",
-            "position": "after"
-          }
-        ],
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "unknown",
-          "parent",
-          ["sibling", "index"],
-          "object",
-          "type"
-        ],
-        "newlines-between": "always"
-      }
-    ],
-    // best practices:
-    "no-class-assign": "error",
-    "no-duplicate-imports": "error",
-    "no-restricted-exports": "off", // not applicable for a config preset (should be configured only in projects)
-    "no-restricted-imports": "off", // not applicable for a config preset (should be configured only in projects)
-    "no-useless-computed-key": "error",
-    "no-useless-constructor": "error",
-    "no-useless-rename": "error",
-    "no-var": "error",
-    "prefer-const": "error",
-    "prefer-numeric-literals": "error",
-    "prefer-rest-params": "error",
-    "prefer-spread": "error",
-    "prefer-template": "error",
-    "require-yield": "error",
-    "symbol-description": "error",
-    "no-unused-vars": "error",
-    "no-debugger": "warn",
-    "constructor-super": "error",
-    "no-const-assign": "error",
-
-    "no-dupe-class-members": "error",
-    "no-new-symbol": "error",
-    "no-this-before-super": "error",
-    "no-unsafe-optional-chaining": "error",
-
-    "no-unused-expressions": "off",
-    "@babel/no-unused-expressions": "error"
-  },
-  "overrides": [
-    {
-      "files": ["**/*.ts?(x)"],
-      "rules": {
-        "no-var": "error", // ts transpiles let/const to var, so no need for vars any more
-        "no-undef": "off", // ts has its own checks
-        "no-unused-vars": "off",
-        "@typescript-eslint/no-unused-vars": "error",
-        "prefer-const": "error", // ts provides better types with const
-        "prefer-rest-params": "error", // ts provides better types with rest args over arguments
-        "prefer-spread": "error", // ts transpiles spread to apply, so no need for manual apply
-
-        "no-duplicate-imports": "off",
-        "@typescript-eslint/no-duplicate-imports": "error",
-
-        "no-useless-constructor": "off",
-        "@typescript-eslint/no-useless-constructor": "error",
-        "constructor-super": "off", // ts(2335) & ts(2377)
-        "no-const-assign": "off", // ts(2588)
-        "no-new-symbol": "off", // ts(2588)
-        "no-this-before-super": "off", // ts(2376)
-
-        "no-dupe-class-members": "off",
-        "@typescript-eslint/no-dupe-class-members": "off", // ts(2393) & ts(2300)
-
-        "@babel/no-unused-expressions": "off",
-        "@typescript-eslint/no-unused-expressions": "error"
-      }
-    }
-  ]
+    "import/no-unresolved": "off"
+    // "import/order": ["error", { "warnOnUnassignedImports": true }]
+  }
 }
