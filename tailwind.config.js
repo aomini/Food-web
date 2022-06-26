@@ -31,8 +31,18 @@ module.exports = {
       }
     },
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
+      sans: ['"Open Sans"', 'sans-serif'],
       serif: ['Merriweather', 'serif']
+    },
+    fontSize: {
+      xs: '.75rem',
+      sm: '.875rem',
+      base: '1rem',
+      lg: '1.125rem',
+      xl: '1.25rem',
+      '2xl': '1.75rem',
+      '3xl': '2rem',
+      '4xl': '3.75rem'
     },
     extend: {
       spacing: {
