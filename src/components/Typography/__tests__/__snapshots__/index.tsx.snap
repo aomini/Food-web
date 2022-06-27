@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Typography /> should correctly render with the given variant 1`] = `
+<h2
+  class="text-3xl"
+>
+  Heading 2
+</h2>
+`;
+
+exports[`<Typography /> should render a typography element with mapped variant 1`] = `
+<p
+  class="text-base"
+>
+  Paragraph
+</p>
+`;
+
+exports[`<Typography /> should render a typography element with mapped variant 2`] = `
+<span
+  class="text-sm"
+>
+  Paragraph
+</span>
+`;
+
+exports[`<Typography /> should render a typography element with supplied variant 1`] = `
+<h6
+  class="text-base"
+>
+  Text rendered with heading
+</h6>
+`;
