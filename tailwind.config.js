@@ -11,8 +11,9 @@ module.exports = {
       lg: '976px',
       xl: '1440px'
     },
-    container:{
-      center:true
+    container: {
+      center: true,
+      padding: '2rem'
     },
     colors: {
       green: {
