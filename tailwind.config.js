@@ -11,6 +11,9 @@ module.exports = {
       lg: '976px',
       xl: '1440px'
     },
+    container:{
+      center:true
+    },
     colors: {
       green: {
         50: '#E9F5EC',
@@ -31,8 +34,8 @@ module.exports = {
       }
     },
     fontFamily: {
-      sans: ['"Open Sans"', 'sans-serif'],
-      serif: ['Merriweather', 'serif']
+      display: ['"Open Sans"'],
+      body: ['"Open Sans"']
     },
     fontSize: {
       xs: '.75rem',
@@ -45,14 +48,10 @@ module.exports = {
       '4xl': '3.75rem'
     },
     extend: {
-      spacing: {
-        128: '32rem',
-        144: '36rem'
-      },
       borderRadius: {
         '4xl': '2rem'
       }
     }
   },
   plugins: []
-}
+};
