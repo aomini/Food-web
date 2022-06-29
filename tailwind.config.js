@@ -23,7 +23,7 @@ module.exports = {
         300: '#646464'
       },
       white: {
-        100: '#fff'
+        default: '#fff'
       },
       black: {
         50: '#323232',
@@ -55,4 +55,4 @@ module.exports = {
     }
   },
   plugins: []
-}
+};
