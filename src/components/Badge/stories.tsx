@@ -1,9 +1,26 @@
-import { Story, Meta } from '@storybook/react'
-import Badge from '.'
+import { Meta } from '@storybook/react';
+
+import Badge from '.';
 
 export default {
   title: 'Badge',
-  component: Badge
-} as Meta
+  component: Badge,
+  argTypes: {
+    color: {
+      options: ['red', 'green'],
+      control: { type: 'radio' }
+    }
+  }
+} as Meta;
 
-export const Default: Story = () => <Badge />
+const Template = (args: any) => {
+  //👇 Your template goes here
+  return <Badge {...args} />;
+};
+
+export const Default = Template.bind({});
+Default.args = {
+  color: 'red',
+  children: '15% off',
+  uppercase: true
+};

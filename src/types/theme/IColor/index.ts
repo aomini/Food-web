@@ -1,3 +1,3 @@
-type IColor = 'green' | 'outlined' | 'contained' | 'ghost'
+type IColor = 'green' | 'red' | 'white' | 'gray';
 
-export default IColor
+export default IColor;

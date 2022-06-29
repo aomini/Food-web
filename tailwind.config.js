@@ -17,6 +17,7 @@ module.exports = {
     },
     colors: {
       green: {
+        light: '#DBE7E0',
         50: '#E9F5EC',
         default: '#219E43'
       },
@@ -32,6 +33,10 @@ module.exports = {
       black: {
         50: '#323232',
         100: '#000'
+      },
+      red: {
+        light: '#EDD3D3',
+        100: '#FF0000'
       }
     },
     fontFamily: {
