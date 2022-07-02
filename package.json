@@ -15,6 +15,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@babel/eslint-parser": "^7.18.2",
     "@babel/eslint-plugin": "^7.17.7",
     "@netlify/classnames-template-literals": "^1.0.3",
     "autoprefixer": "^10.4.2",
