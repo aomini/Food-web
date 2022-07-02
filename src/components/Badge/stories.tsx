@@ -4,23 +4,17 @@ import Badge from '.';
 
 export default {
   title: 'Badge',
-  component: Badge,
-  argTypes: {
-    color: {
-      options: ['red', 'green'],
-      control: { type: 'radio' }
-    }
-  }
+  component: Badge
 } as Meta;
 
-const Template = (args: any) => {
-  //👇 Your template goes here
-  return <Badge {...args} />;
-};
+export const PrimaryBadge = () => <Badge color="green">Badge</Badge>;
 
-export const Default = Template.bind({});
-Default.args = {
-  color: 'red',
-  children: '15% off',
-  uppercase: true
-};
+export const DangerBadge = () => <Badge color="red">15% Off</Badge>;
+
+export const CapitalBadge = () => <Badge transform="capital">15% Off</Badge>;
+
+export const NormalBadge = () => <Badge transform="normal">15% Off</Badge>;
+
+export const UpperBadge = () => <Badge transform="upper">15% Off</Badge>;
+
+export const LowerBadge = () => <Badge transform="lower">THIS IS CAPPED</Badge>;
