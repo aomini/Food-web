@@ -1,5 +1,5 @@
-const IconButton = () => (
-  <h1>IconButton</h1>
-)
+import * as React from 'react';
 
-export default IconButton
+const IconButton = () => <h1>IconButton</h1>;
+
+export default IconButton;
