@@ -33,6 +33,21 @@ export const Sizes = () => (
   </div>
 );
 
+export const ContainsSVG = () => (
+  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+    <Button color="primary">Default</Button>
+    <Button color="primary" size="lg">
+      Large
+    </Button>
+    <Button color="primary" size="md">
+      Medium
+    </Button>
+    <Button color="primary" size="sm">
+      Small
+    </Button>
+  </div>
+)
+
 export const Loading = () => (
   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
     <Button color="primary" isLoading>

@@ -3,7 +3,7 @@ import React from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 
 // style
-import './select.css';
+// import './select.css';
 
 const Selector = () => (
   <svg

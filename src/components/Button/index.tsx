@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import ctl from '@netlify/classnames-template-literals';
+import clsx from 'clsx';
 
 /** Available sizes & specific classes */
 const SIZES = {
@@ -62,7 +63,8 @@ const Button = ({
     JSX.IntrinsicElements['button'] &
     JSX.IntrinsicElements['a']
 >) => {
-  const buttonClasses = ctl(`
+  const buttonClasses = ctl(
+    clsx(`
     flex
     items-center
     justify-center
@@ -80,7 +82,8 @@ const Button = ({
     }
     ${SIZES[size]}
     ${COLORS[color]}
-  `);
+  `)
+  );
 
   if (isLink) {
     return (
