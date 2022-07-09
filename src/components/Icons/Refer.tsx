@@ -5,7 +5,7 @@ import Svg from '../Svg';
 const Refer = () => {
   return (
     <Svg>
-      <g id="refer">
+      <g xmlns="http://www.w3.org/2000/svg">
         <g id="3 User">
           <path
             id="Stroke 1"
