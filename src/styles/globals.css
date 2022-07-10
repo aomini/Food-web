@@ -1,3 +1,64 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* 64px 56px 48px 44px 40px */
+@layer components {
+  .btn-has-icon-64 {
+    @apply h-16 w-16 p-4;
+  }
+
+  .btn-has-icon-64 svg {
+    height: 30px;
+    width: 30px;
+  }
+
+  .btn-has-icon-56 {
+    @apply w-14 p-[0.875rem];
+  }
+
+  .btn-has-icon-56 svg {
+    height: 26px;
+    width: 26px;
+  }
+
+  .btn-has-icon-48 {
+    @apply w-12 p-[0.875rem];
+  }
+
+  .btn-has-icon-48 svg {
+    height: 20px;
+    width: 20px;
+  }
+
+  .btn-has-icon-44 {
+    @apply flex h-11 w-11 items-center justify-center;
+  }
+
+  .btn-has-icon-44 svg {
+    height: 16px;
+    width: 16px;
+  }
+
+  .btn-has-icon-40 {
+    @apply w-10 p-3;
+  }
+
+  .btn-has-icon-40 svg {
+    height: 1rem;
+    width: 1rem;
+  }
+
+  /** Checkout */
+  .radio-btn-input:checked + .radio-btn-control:after {
+    @apply bg-green-default;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

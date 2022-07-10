@@ -20,11 +20,15 @@ module.exports = {
         50: '#E9F5EC',
         default: '#219E43'
       },
+      yellow: {
+        default: '#FFAA33'
+      },
       grey: {
         50: '#F9F9F9',
         100: '#D4D4D4',
         200: '#A2A2A2',
-        300: '#646464'
+        300: '#646464',
+        secondary: '#646464'
       },
       white: {
         default: '#fff'
@@ -34,8 +38,8 @@ module.exports = {
         100: '#000'
       },
       red: {
-        light: '#EDD3D3',
-        100: '#FF0000'
+        50: '#EDD3D3',
+        default: '#FF0000'
       }
     },
     fontFamily: {
@@ -55,6 +59,12 @@ module.exports = {
     extend: {
       borderRadius: {
         '4xl': '2rem'
+      },
+      fill: {
+        current: 'currentColor'
+      },
+      'shadow-md': {
+        'box-shadow': '0px 4px 16px rgba(191, 187, 187, 0.15)'
       }
     }
   },

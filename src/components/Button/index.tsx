@@ -1,34 +1,50 @@
 import React from 'react';
 import Link from 'next/link';
-import ctl from '@netlify/classnames-template-literals';
-import clsx from 'clsx';
+import { clsx } from 'utils/withCtl';
 
 /** Available sizes & specific classes */
 const SIZES = {
   lg: 'px-10 py-3.5 min-w-[393px]',
+  xl: 'px-10 py-3.5',
   md: 'px-10 py-3.5',
+  xs: 'px-10 py-3.5',
   sm: 'py-2.5 px-4'
 } as const;
 
 /** Available colors & specific classes */
-const COLORS = {
-  primary: 'bg-green-default',
+export const COLORS = {
+  primary: 'bg-green-default text-white-default',
   lightPrimary: 'bg-green-50 text-green-default',
   outlinePrimary:
     'text-green-default shadow-[inset_0_0_0_1px] shadow-green-default font-normal',
   outlineGray:
-    'text-grey-200 shadow-[inset_0_0_0_1px] shadow-grey-200 font-normal'
+    'text-grey-200 shadow-[inset_0_0_0_1px] shadow-grey-200 font-normal',
+  ghostDanger: 'text-red-default',
+  outlineDanger: 'bg-red-50 text-red-default'
 } as const;
 
+const ICON_SIZES = {
+  xl: 'btn-has-icon-64',
+  lg: 'btn-has-icon-56',
+  md: 'btn-has-icon-48',
+  sm: 'btn-has-icon-44',
+  xs: 'btn-has-icon-40'
+};
+
+export type IconButtonSizesType = keyof typeof SIZES | keyof typeof ICON_SIZES;
+
 type StylingProps = {
+  /** Pill */
+  pill?: boolean;
+
   /** If it has icons */
-  containsIcons?: boolean;
+  containsIcon?: boolean;
 
   /** Button is disabled */
   disabled?: boolean;
 
   /** Size */
-  size?: keyof typeof SIZES;
+  size?: IconButtonSizesType;
 
   /** Color */
   color?: keyof typeof COLORS;
@@ -45,17 +61,23 @@ type ConfigProps = {
 
   /** Text to show during loading */
   loadingText?: React.ReactNode;
+
+  /** Wrapper or the component to be rendered  */
+  ButtonWrapper?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
 };
 
 const Button = ({
   loadingText = null,
   size = 'md',
   color = 'primary',
+  pill = false,
   isLink,
-  containsIcons,
+  containsIcon,
   children,
   isDisabled = false,
   isLoading = false,
+  ButtonWrapper,
+  className = '',
   ...rest
 }: React.PropsWithChildren<
   StylingProps &
@@ -63,15 +85,13 @@ const Button = ({
     JSX.IntrinsicElements['button'] &
     JSX.IntrinsicElements['a']
 >) => {
-  const buttonClasses = ctl(
-    clsx(`
+  const buttonClasses = clsx(`
     flex
     items-center
     justify-center
-    rounded-lg
+    ${pill ? 'rounded-full' : 'rounded-lg'}
     max-w-xs   
     font-semibold
-    text-white-default
     leading-6
     ${
       isDisabled
@@ -80,10 +100,23 @@ const Button = ({
         ? 'cursor-progress'
         : 'cursor-auto'
     }
-    ${SIZES[size]}
     ${COLORS[color]}
-  `)
-  );
+    ${containsIcon ? ICON_SIZES[size] : SIZES[size]}
+    ${className}
+  `);
+
+  if (ButtonWrapper) {
+    return (
+      // @ts-ignore
+      <ButtonWrapper className={buttonClasses} disabled={isDisabled} {...rest}>
+        {isLoading ? (
+          loadingText || 'Loading...'
+        ) : (
+          <span className={buttonWithIconClasses}>{children}</span>
+        )}
+      </ButtonWrapper>
+    );
+  }
 
   if (isLink) {
     return (
@@ -97,8 +130,19 @@ const Button = ({
 
   return (
     <button className={buttonClasses} disabled={isDisabled} {...rest}>
-      {isLoading ? loadingText || 'Loading...' : <span>{children}</span>}
+      {isLoading ? (
+        loadingText || 'Loading...'
+      ) : (
+        <span className={buttonWithIconClasses}>{children}</span>
+      )}
     </button>
   );
 };
+
+const buttonWithIconClasses = clsx(`
+  flex
+  items-center
+  gap-[14px]
+`);
+
 export default Button;

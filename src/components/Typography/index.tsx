@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { ElementType, HtmlHTMLAttributes } from 'react';
 
 /**
@@ -42,11 +43,11 @@ type TypographyTypes = {
 
 const Typography: React.FC<
   TypographyTypes & HtmlHTMLAttributes<HTMLParagraphElement>
-> = ({ variant, component, children }) => {
+> = ({ variant, component, className, children }) => {
   const style = variantMapping[variant].style;
 
   const Component = component || variantMapping[variant].mapping || 'span';
 
-  return <Component className={style}>{children}</Component>;
+  return <Component className={clsx(style, className)}>{children}</Component>;
 };
 export default Typography;
