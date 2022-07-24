@@ -12,12 +12,12 @@ const Label = ({ className = '' }) => (
   </div>
 );
 
-export const Default = () => <Checkbox id="default" label="default" />;
+export const Default = () => <Checkbox id="default" label="Default" />;
 
 export const WithoutLabel = () => <Checkbox id="withoutLabel" />;
 
-export const Checked = () => <Checkbox id="checked" checked />;
+export const Checked = () => <Checkbox id="checked" label="Checked" checked />;
 
 export const ComponentLabel = () => {
-  return <Checkbox id="Test" label={<Label />} />;
+  return <Checkbox id="component-label" label={<Label />} />;
 };
