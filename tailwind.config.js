@@ -35,6 +35,7 @@ module.exports = {
       },
       black: {
         50: '#323232',
+        default: '#323232',
         100: '#000'
       },
       red: {
@@ -65,6 +66,9 @@ module.exports = {
       },
       'shadow-md': {
         'box-shadow': '0px 4px 16px rgba(191, 187, 187, 0.15)'
+      },
+      boxShadow: {
+        input: '0px 0px 0px 1px inset rgb(162, 162, 162)'
       }
     }
   },
